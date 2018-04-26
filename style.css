@@ -8,6 +8,9 @@ body{
     width: inherit;
     height: inherit;
     margin: inherit;
+    background-image: url(./assets/BigBirdEdit.png);
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 #object-box{
@@ -19,3 +22,16 @@ body{
    top: 40px;
 }
 
+.svg-eye{
+    position: absolute;
+}
+
+#eye1{
+    top: 225px;
+    left: 273px;
+}
+
+#eye2{
+    top: 198px;
+    left: 315px;
+}
