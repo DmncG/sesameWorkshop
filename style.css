@@ -1,0 +1,21 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+#container{
+    width: inherit;
+    height: inherit;
+    margin: inherit;
+}
+
+#object-box{
+   width: 100px;
+   height: 100px;
+   background-color: blue;
+   position: absolute;
+   left: 40px;
+   top: 40px;
+}
+
