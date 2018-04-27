@@ -1,0 +1,61 @@
+You are designing a set of RESTful APIs for a front-end project. The API base
+URL is http://example.com/api. The PM wants you to implement a set of
+interfaces to add a user, get all users, and delete a user. Demonstrate how you
+will design the interfaces.
+
+* You do not need to submit any actual code implementation of the interface
+itself, just demonstrate how it will look like from the front-end prospective.
+
+ What URL you will use for each function (add/delete/get)?
+ What parameters the front-end should provide?
+ Write one example query from the front-end to add a user, and the
+example return value.
+
+Consider that normally an API returns different results/statuses based on
+user’s input, please demonstrate the return data structure:
+
+ What information do you return to the front-end when the result is
+good?
+ What do you return when something goes wrong in the server?
+ The reason of your design.
+
+In general, I would define each URL as follows:
+
+add - /api/users/add/:username/:emailaddress/:otherparams
+delete - /api/users/delete/:userID
+get - /api/users/
+
+The front-end could provide a number of things depending on the function that gets initiated. 
+For a delete function, the front-end has to provide a unique key that would successfully identify 
+the user in the database. In this example, this could be in the form of a userID or a username (if it is unique).
+For an add function, the front end must provide all pertinent information to create the user and populate the
+user's data. An example query string that could be passed by the front end would look something like this:
+
+http://example.com/users/add?username=username&emailaddress=emailaddress&otherparams=otherparams 
+
+However, with the use of a Javascript framework like React, one can control the inputs by the user and pass it
+to the component's state. When an add button is triggered, the current state could be passed to the backend 
+for the new user's parameters, greatly reducing the query string the api URL to just /api/users/add.
+
+As for the return value, you can return an object that can look something like this:
+
+{
+    loading: boolean,
+    error: boolean,
+    loaded: boolean,
+    users: [{user1: string, email: string, tel: number}]
+}
+
+With this kind of structure, the frontend can react accordingly depending on the current state. 
+When the error value is true, the front end can display a 400 status or a custom error component
+that would inform the user that the request had timed out or a problem was encountered. 
+When loading is true, one can render a loading component or an innerHTML showing that the request is still being processed. 
+When loaded is true and error is false, the front end will successfully display the data requested.
+For getting a single user, one can parse through the users list and filter out the user that will 
+be rendered. For a deletion, the front end could just display a notification or make an element active 
+that would say the following users were deleted from the list. 
+
+
+
+
+
