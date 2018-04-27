@@ -35,7 +35,7 @@ http://example.com/users/add?username=username&emailaddress=emailaddress&otherpa
 
 However, with the use of a Javascript framework like React, one can control the inputs by the user and pass it
 to the component's state. When an add button is triggered, the current state could be passed to the backend 
-for the new user's parameters, greatly reducing the query string the api URL to just /api/users/add.
+for the new user's parameters, greatly reducing the query string of the api URL to just /api/users/add.
 
 As for the return value, you can return an object that can look something like this:
 
